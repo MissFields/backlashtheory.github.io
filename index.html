@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>The Backlash Theory</title>
+    <link rel="shortcut icon" href="img/icon.png">
+    <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Manrope&display=swap" rel="stylesheet">
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .row {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            padding: 0 4px;
+        }
+
+        .column {
+            -ms-flex: 25%;
+            flex: 25%;
+            max-width: 25%;
+            padding: 0 4px;
+        }
+
+        .column img {
+            margin-top: 8px;
+            vertical-align: middle;
+            width: 100%;
+        }
+
+        @media screen and (max-width: 800px) {
+            .column {
+                -ms-flex: 50%;
+                flex: 50%;
+                max-width: 50%;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .column {
+                -ms-flex: 100%;
+                flex: 100%;
+                max-width: 100%;
+            }
+        }
+
+        .row::after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+
+        [class*="col-"] {
+            float: left;
+            padding: 15px;
+        }
+
+
+        /* For desktop: */
+        /* For desktop: */
+        /* For desktop: */
+
+        .col-1 {
+            width: 8.33%;
+        }
+
+        .col-2 {
+            width: 16.66%;
+        }
+
+        .col-3 {
+            width: 25%;
+        }
+
+        .col-4 {
+            width: 33.33%;
+        }
+
+        .col-5 {
+            width: 41.66%;
+        }
+
+        .col-6 {
+            width: 50%;
+        }
+
+        .col-7 {
+            width: 58.33%;
+        }
+
+        .col-8 {
+            width: 66.66%;
+        }
+
+        .col-9 {
+            width: 75%;
+        }
+
+        .col-10 {
+            width: 83.33%;
+        }
+
+        .col-11 {
+            width: 91.66%;
+        }
+
+        .col-12 {
+            width: 100%;
+        }
+
+        @media only screen and (max-width: 768px) {
+
+            /* For mobile phones: */
+            [class*="col-"] {
+                width: 100%;
+            }
+        }
+
+        body {
+            margin: 0;
+            background-color: #8B5E3C;
+
+        }
+
+
+        .navbar {
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+
+        }
+
+
+        .navbar a {
+            float: right;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 25px 20px;
+            text-decoration: none;
+            font-size: 2vw;
+            font-family: 'Manrope', sans-serif;
+
+        }
+
+        .navbar a:hover {
+            background: #ddd;
+            color: black;
+        }
+
+
+
+        /*        nothing up there i NEED     */
+        /*        nothing up there i NEED     */
+        /*        nothing up there i NEED     */
+
+
+        .projectname {
+            font-size: 12vw;
+            padding-top: 4vw;
+            color: black;
+            margin: 0;
+            font-family: 'Bowlby One SC', cursive;
+        }
+
+        .us {
+            text-align: center;
+            font-size: 16px;
+
+        }
+
+        h3 {
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .sub {
+            color: white;
+            font-size: 40px;
+            font-weight: 900;
+        }
+
+        .name {
+            color: white;
+            text-decoration: none;
+            font-family: 'Manrope', sans-serif;
+        }
+
+
+
+
+
+        .parallax {
+            background-image: url("img//img_Emancipate.png");
+            min-height: 500px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        
+        
+        @media screen and (max-width: 768px) {
+
+.parallax {display: none;}
+
+}
+        .aboutheader {
+            padding-top: 4vw;
+            font-size: 70px;
+            text-align: center;
+            font-family: 'Bowlby One SC', cursive;
+            letter-spacing: 3.5px;
+
+        }
+
+        .text {
+            font-family: 'Manrope', sans-serif;
+            font-size: 20px;
+            line-height: 30px;
+            padding-bottom: 3vw;
+            text-align: center;
+        }
+
+        .header {
+            text-align: center;
+            padding-top: 120px;
+            padding-bottom: 120px;
+            font-size: 7vw;
+            font-family: 'Bowlby One SC', cursive;
+            letter-spacing: 2px;
+
+        }
+
+        .container1 {
+            position: relative;
+
+        }
+
+        .image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            background: rgb(0, 0, 0);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            width: 100%;
+            transition: .5s ease;
+            opacity: 0;
+            color: white;
+            font-size: 20px;
+            padding: 20px;
+            text-align: center;
+            font-family: 'Manrope', sans-serif;
+            line-height: 30px;
+
+        }
+
+        .container1:hover .overlay {
+            opacity: 1;
+        }
+
+        .copy {
+            color: white;
+            text-align: center;
+            font-family: 'Manrope', sans-serif;
+            padding-top: 4vw;
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="navbar">
+        <a href="contact.html">Contact</a>
+        <a href="#head">Poster Series</a>
+        <a href="index.html">Home</a>
+    </div>
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="col-12">
+                <h1 class="projectname">The<br> Backlash<br>Theory</h1>
+
+            </div>
+            <div class="col-12">
+                <div class="parallax"></div>
+            </div>
+
+            <div class="col-12 us">
+                <h3 class="sub"><i>The White Man Needs To Get Whipped Too.</i></h3>
+            </div>
+            <div class="col-12">
+                <div class="parallax"></div>
+            </div>
+            <div class="col-12">
+                <h1 class="aboutheader">About</h1>
+
+            </div>
+            <div class="col-3"></div>
+            <div class="col-6">
+
+                <p class="text">The Backlash Theory is a project about addressing racism in America through twenty posters. The word backlash is a robust opposing reaction to an idea, action, or object. The term applies to bias and discrimination against minoritized/marginalized groups. Examples include subtle approaches such as ridicule and condemnation or less subtle approaches like assassination and rape. For this project, our approach will be about ridiculing the white man.<br><br>Black people often sit back and take a peaceful approach when it comes to addressing wrongful racial treatment. The majority of blacks are taught from a young age to comply with white ideals. In this project, we want to ignore the peaceful approach and get whites upset and address wrongful racial treatment with brute force through designed posters.<br><br>
+
+                </p>
+            </div>
+            <div class="col-3"></div>
+            <div class="col-12">
+                <div class="parallax"></div>
+            </div>
+
+            <div class="col-12 us">
+                <h3>
+                    <p class="name">Angelica Fields &amp; Danille Simon</p>
+                </h3>
+            </div>
+            <div class="col-12">
+                <div class="parallax"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <h1 id="head" class="header">Poster Series</h1>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="column">
+
+                <div class="container1">
+                    <img class="image" src="img/img_fields.png" style="width:100%">
+                    <div class="overlay"><i>Nigger Joe</i><br>By: Angelica F.</div>
+
+                </div>
+
+                <div class="container1">
+                    <img class="image" src="img/img_fields1.png" style="width:100%">
+                    <div class="overlay"><i>Get Off Me</i><br>By: Angelica F.</div>
+                </div>
+
+                <div class="container1">
+
+                    <img src="img/img_fields2.png" style="width:100%">
+                    <div class="overlay"><i>America</i><br>By: Angelica F.</div>
+                </div>
+
+                <div class="container1">
+
+                    <img src="img/img_simon3.png" style="width:100%">
+                    <div class="overlay"><i>Fuck White People</i><br>By: Danille S.</div>
+                </div>
+
+                <div class="container1">
+
+                    <img src="img/img_simon4.png" style="width:100%">
+                    <div class="overlay"><i>Niggas Only</i><br>By: Danille S.</div>
+                </div>
+            </div>
+
+
+            <div class="column">
+
+                <div class="container1">
+
+                    <img src="img/img_fields7.png" style="width:100%">
+                    <div class="overlay"><i>Cracker</i><br>By: Angelica F.</div>
+                </div>
+
+                <div class="container1">
+
+                    <img src="img/img_fields8.png" style="width:100%">
+                    <div class="overlay"><i>Caucacity</i><br>By: Angelica F.</div>
+                </div>
+
+                <div class="container1">
+
+                    <img src="img/img_fields9.png" style="width:100%">
+                    <div class="overlay"><i>White Devil</i><br>By: Angelica F.</div>
+                </div>
+
+                <div class="container1">
+
+                    <img src="img/img_simon.png" style="width:100%">
+                    <div class="overlay"><i>Never Forget</i><br>By: Danille S.</div>
+                </div>
+
+                <div class="container1">
+
+                    <img src="img/img_simon1.png" style="width:100%">
+                    <div class="overlay"><i>White Fragility</i><br>By: Danille S.</div>
+                </div>
+            </div>
+
+
+            <div class="column">
+                <div class="container1">
+
+                    <img src="img/img_simon7.png" style="width:100%">
+                    <div class="overlay"><i>Nigga</i><br>By: Danille S.</div>
+                </div>
+
+                <div class="container1">
+
+                    <img src="img/img_simon8.png" style="width:100%">
+                    <div class="overlay"><i>Lynched</i><br>By: Danille S.</div>
+                </div>
+
+                <div class="container1">
+
+                    <img src="img/img_simon9.png" style="width:100%">
+                    <div class="overlay"><i>Black Jesus</i><br>By: Danille S.</div>
+                </div>
+
+                <div class="container1">
+
+                    <img src="img/img_simon5.png" style="width:100%">
+                    <div class="overlay"><i>Tom the Cotton Picker</i><br>By: Danille S.</div>
+                </div>
+
+                <div class="container1">
+
+                    <img src="img/img_simon6.png" style="width:100%">
+                    <div class="overlay"><i>White Tears</i><br>By: Danille S.</div>
+                </div>
+            </div>
+
+
+            <div class="column">
+
+                <div class="container1">
+
+                    <img src="img/img_fields3.png" style="width:100%">
+                    <div class="overlay"><i>Stupid Song</i><br>By: Angelica F.</div>
+                </div>
+
+                <div class="container1">
+
+                    <img src="img/img_fields4.png" style="width:100%">
+                    <div class="overlay"><i>Blackface</i><br>By: Angelica F.</div>
+                </div>
+
+                <div class="container1">
+
+                    <img src="img/img_fields5.png" style="width:100%">
+                    <div class="overlay"><i>Hey, Karen</i><br>By: Angelica F.</div>
+                </div>
+
+                <div class="container1">
+
+                    <img src="img/img_fields6.png" style="width:100%">
+                    <div class="overlay"><i>Fuck This Dude</i><br>By: Angelica F.</div>
+
+                </div>
+
+                <div class="container1">
+
+                    <img src="img/img_simon2.png" style="width:100%">
+                    <div class="overlay"><i>Pinata</i><br>By: Danille S.</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <div class="col-12">
+        <p class="copy">Copyright &copy; All Rights Reserved</p>
+    </div>
+
+
+</body></html>
